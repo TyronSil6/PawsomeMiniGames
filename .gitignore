@@ -1,4 +1,4 @@
-*.iml
+D*.iml
 .gradle
 /local.properties
 /.idea/caches
@@ -13,3 +13,12 @@
 .externalNativeBuild
 .cxx
 local.properties
+   # Release signing - NEVER commit these
+   keystore.properties
+   *.jks
+   *.keystore
+
+   # Android Studio
+   /.idea/
+   *.apk
+   *.aab
