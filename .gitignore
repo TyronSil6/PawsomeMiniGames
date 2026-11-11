@@ -1,19 +1,15 @@
-   *.iml
-   .gradle
-   /local.properties
-   /.idea/
-   .DS_Store
-   /build
-   /captures
-   .externalNativeBuild
-   .cxx
-   local.properties
-
-   # Release signing - never commit these
-   keystore.properties
-   *.jks
-   *.keystore
-
-   # Build outputs
-   *.apk
-   *.aab
+*.iml
+.gradle
+/local.properties
+local.properties
+/.idea/
+/build
+/captures
+.externalNativeBuild
+.cxx
+.DS_Store
+keystore.properties
+*.jks
+*.keystore
+*.apk
+*.aab
