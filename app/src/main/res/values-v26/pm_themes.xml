@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PawsomePopMania" parent="PopMania.BaseTheme">
+        <item name="android:fontFamily">@font/pm_outfit_bold</item>
+    </style>
+    <!-- Pop-up cards (leaderboard) use the system font, exactly like Critter Toss's pop-ups -->
+    <style name="PopManiaDialog" parent="PopManiaDialog.Base" />
+</resources>

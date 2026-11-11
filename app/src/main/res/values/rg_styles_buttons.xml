@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="rg_Widget.Game.Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/rg_btn_gold</item>
+        <item name="android:textColor">@color/rg_text_brown</item>
+        <item name="android:fontFamily">@font/pm_outfit_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMinTextSize">10sp</item>
+        <item name="autoSizeMaxTextSize">20sp</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+    </style>
+    <style name="rg_Widget.Game.Button.Primary">
+        <item name="android:background">@drawable/rg_btn_green</item>
+        <item name="android:textColor">@color/rg_cream</item>
+        <item name="android:shadowColor">#CC1B4D12</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+    <style name="rg_Widget.Game.Button.Danger">
+        <item name="android:background">@drawable/rg_btn_red</item>
+        <item name="android:textColor">@color/rg_cream</item>
+        <item name="android:shadowColor">#CC4A1410</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+    <style name="rg_Widget.Game.ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/rg_btn_gold</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

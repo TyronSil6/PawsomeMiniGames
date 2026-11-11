@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rg_bg_meadow" />
+
+    <LinearLayout
+        android:id="@+id/safe_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingStart="14dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="0dp">
+
+        <!-- Top bar: pause, score, time (same look as Pop Mania) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btn_pause"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/pm_btn_round_gold"
+                android:clickable="true"
+                android:contentDescription="@string/rg_cd_pause"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="22dp"
+                android:src="@drawable/pm_ic_pause" />
+
+            <TextView
+                android:id="@+id/score_text"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/pm_panel_hud"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/pm_score_yellow"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:id="@+id/timer_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:background="@drawable/pm_panel_hud"
+                android:contentDescription="@string/rg_cd_timer"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/pm_ic_clock" />
+
+                <TextView
+                    android:id="@+id/timer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:minWidth="52dp"
+                    android:textColor="@color/rg_cream"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.example.pawsomeminigames.reactiongame.ui.TimerBarView
+            android:id="@+id/timer_bar"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Cue: tan frame + cream card, like the other games' panels -->
+        <LinearLayout
+            android:id="@+id/cue_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/pm_panel_frame"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pm_panel_cream"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="8dp">
+
+                <FrameLayout
+                    android:id="@+id/cue_slot"
+                    android:layout_width="82dp"
+                    android:layout_height="82dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.04"
+                        android:text="@string/rg_find_this"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pm_coral"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/cue_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pm_brown_text"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rg_cue_hint"
+                        android:textColor="@color/pm_brown_soft"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.example.pawsomeminigames.reactiongame.ui.TileGridLayout
+                android:id="@+id/tile_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginEnd="-14dp"
+            android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
+            android:src="@drawable/rg_deco_log_bottom" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/intro_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:visibility="gone">
+
+        <com.example.pawsomeminigames.reactiongame.ui.OutlineTextView
+            android:id="@+id/intro_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="20dp"
+            android:textColor="@color/pm_gold"
+            android:textSize="110sp"
+            android:textStyle="bold"
+            app:rg_strokeColor="@color/rg_outline_brown"
+            app:rg_strokeWidth="10dp" />
+    </FrameLayout>
+
+    <!-- PAUSE overlay -->
+    <FrameLayout
+        android:id="@+id/pause_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pm_overlay_dim"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/pm_panel_frame"
+                android:orientation="vertical"
+                android:padding="9dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pm_panel_cream"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingStart="18dp"
+                    android:paddingTop="46dp"
+                    android:paddingEnd="18dp"
+                    android:paddingBottom="22dp">
+
+                    <TextView
+                        android:id="@+id/btn_resume"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@drawable/pm_btn_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_resume"
+                        android:textColor="@color/pm_text_white"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/btn_restart"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/pm_btn_gold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_restart"
+                        android:textColor="@color/pm_brown_text"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/btn_pause_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/pm_btn_dark"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_menu"
+                        android:textColor="@color/pm_cream_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/pm_pill_header"
+                android:gravity="center"
+                android:minWidth="190dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="3dp"
+                android:text="@string/pm_paused_title"
+                android:textColor="@color/pm_text_white"
+                android:textSize="22sp" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- GAME OVER overlay -->
+    <ScrollView
+        android:id="@+id/over_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pm_overlay_dim"
+        android:clickable="true"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="480dp">
+
+            <FrameLayout
+                android:id="@+id/over_card"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:clipChildren="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/pm_panel_frame"
+                    android:orientation="vertical"
+                    android:padding="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pm_panel_cream"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingStart="18dp"
+                        android:paddingTop="40dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="22dp">
+
+                        <ImageView
+                            android:id="@+id/over_animal"
+                            android:layout_width="104dp"
+                            android:layout_height="104dp"
+                            android:contentDescription="@string/rg_cd_sad_animal"
+                            android:scaleType="fitCenter" />
+
+                        <TextView
+                            android:id="@+id/over_new_best"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pm_gameover_new_best"
+                            android:textColor="#D98A0B"
+                            android:textSize="19sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/over_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/pm_coral"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:id="@+id/over_best"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/pm_brown_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/over_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:textColor="@color/pm_brown_text"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/over_answer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center"
+                            android:textColor="@color/pm_brown_soft"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/btn_retry"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/pm_btn_red"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:text="@string/pm_btn_play_again"
+                            android:textColor="@color/pm_text_white"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/btn_over_menu"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/pm_btn_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:text="@string/pm_btn_menu"
+                            android:textColor="@color/pm_cream_text"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:background="@drawable/pm_pill_header"
+                    android:gravity="center"
+                    android:minWidth="190dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/rg_game_over"
+                    android:textAllCaps="true"
+                    android:textColor="@color/pm_text_white"
+                    android:textSize="22sp" />
+            </FrameLayout>
+        </FrameLayout>
+    </ScrollView>
+</FrameLayout>

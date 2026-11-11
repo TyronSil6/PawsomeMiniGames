@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/pm_panel_frame"
+        android:orientation="vertical"
+        android:padding="9dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pm_panel_cream"
+            android:orientation="vertical"
+            android:paddingBottom="22dp"
+            android:paddingEnd="18dp"
+            android:paddingStart="18dp"
+            android:paddingTop="44dp">
+
+            <!-- Music -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pm_settings_music"
+                    android:textColor="@color/pm_brown_text"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/btnMusicToggle"
+                    android:layout_width="92dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/pm_toggle_on"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingBottom="3dp"
+                    android:text="@string/pm_toggle_on"
+                    android:textColor="@color/pm_text_white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:maxHeight="30dp"
+                android:minHeight="30dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="14dp"
+                android:progressDrawable="@drawable/pm_seek_track"
+                android:splitTrack="false"
+                android:thumb="@drawable/pm_seek_thumb" />
+
+            <!-- Sound -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pm_settings_sound"
+                    android:textColor="@color/pm_brown_text"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/btnSfxToggle"
+                    android:layout_width="92dp"
+                    android:layout_height="46dp"
+                    android:background="@drawable/pm_toggle_on"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingBottom="3dp"
+                    android:text="@string/pm_toggle_on"
+                    android:textColor="@color/pm_text_white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekSfx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:maxHeight="30dp"
+                android:minHeight="30dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="14dp"
+                android:progressDrawable="@drawable/pm_seek_track"
+                android:splitTrack="false"
+                android:thumb="@drawable/pm_seek_thumb" />
+
+            <TextView
+                android:id="@+id/btnSettingsDone"
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/pm_btn_gold"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="@string/pm_btn_done"
+                android:textColor="@color/pm_brown_text"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/pm_pill_header"
+        android:gravity="center"
+        android:minWidth="190dp"
+        android:paddingBottom="3dp"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+        android:text="@string/pm_settings_title"
+        android:textColor="@color/pm_text_white"
+        android:textSize="22sp" />
+</FrameLayout>

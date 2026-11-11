@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- darker bottom edge gives the button its 3D look -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#9C6410" />
+            <corners android:radius="40dp" />
+        </shape>
+    </item>
+    <!-- button face -->
+    <item android:bottom="5dp">
+        <shape android:shape="rectangle">
+            <gradient android:angle="270" android:startColor="#FFE070" android:endColor="#F5B52A" />
+            <corners android:radius="40dp" />
+            <stroke android:width="3dp" android:color="#E39B14" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base -->
+    <color name="pm_bg_dark">#2A2229</color>
+    <color name="pm_overlay_dim">#A6000000</color>
+    <color name="pm_text_white">#FFFFFF</color>
+
+    <!-- Warm "shrine" palette taken from the reference screens -->
+    <color name="pm_gold">#FFC93D</color>
+    <color name="pm_gold_dark">#E8A21F</color>
+    <color name="pm_coral">#F0663F</color>
+    <color name="pm_cream">#FFF6E2</color>
+    <color name="pm_cream_text">#FFF1D0</color>
+    <color name="pm_tan">#C9A062</color>
+    <color name="pm_brown_text">#5A3520</color>
+    <color name="pm_brown_soft">#8A5A33</color>
+    <color name="pm_divider">#E8D5AA</color>
+
+    <!-- Names used by the game code -->
+    <color name="pm_score_yellow">#FFC93D</color>
+    <color name="pm_time_red">#FF5A4A</color>
+    <color name="pm_text_soft">#FFF1D0</color>
+    <color name="pm_golden">#FFD54F</color>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PawsomeReactionGame" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/rg_bg_splash_window</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/pm_outfit_bold</item>
+        <item name="android:textColor">@color/rg_text_brown</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Pawsome</item>
+        <item name="buttonStyle">@style/rg_Widget.Game.Button</item>
+        <item name="imageButtonStyle">@style/rg_Widget.Game.ImageButton</item>
+    </style>
+</resources>

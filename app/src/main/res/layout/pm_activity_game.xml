@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pm_bg_dark">
+
+    <!-- Sakura background -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pm_bg_arcade" />
+
+    <!-- Top bar: pause, score, time -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnPause"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/pm_btn_round_gold"
+            android:clickable="true"
+            android:contentDescription="@string/pm_cd_pause"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="22dp"
+            android:src="@drawable/pm_ic_pause" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/pm_panel_hud"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pm_label_score"
+                android:textColor="@color/pm_cream_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/pm_score_yellow"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/pm_panel_hud"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/pm_ic_clock" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/pm_label_time"
+                    android:textColor="@color/pm_cream_text"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textColor="@color/pm_score_yellow"
+                android:textSize="28sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Green 3x3 board. Its size is set in GameActivity so it is always square. -->
+    <FrameLayout
+        android:id="@+id/boardFrame"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="95dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole0"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+
+                <com.example.pawsomeminigames.popmania.HoleView
+                    android:id="@+id/hole8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/pm_cd_hole" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Effects layer: hammer, impact burst and floating "+10" texts are added here.
+         It never intercepts touches, so taps always reach the holes underneath. -->
+
+    <!-- PAUSE overlay -->
+    <FrameLayout
+        android:id="@+id/pauseOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pm_overlay_dim"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/pm_panel_frame"
+                android:orientation="vertical"
+                android:padding="9dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pm_panel_cream"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="22dp"
+                    android:paddingEnd="18dp"
+                    android:paddingStart="18dp"
+                    android:paddingTop="46dp">
+
+                    <TextView
+                        android:id="@+id/btnResume"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/pm_btn_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_resume"
+                        android:textColor="@color/pm_text_white"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:id="@+id/btnRestart"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/pm_btn_gold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_restart"
+                        android:textColor="@color/pm_brown_text"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/btnMenuPause"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/pm_btn_dark"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_menu"
+                        android:textColor="@color/pm_cream_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPauseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/pm_pill_header"
+                android:gravity="center"
+                android:minWidth="190dp"
+                android:paddingBottom="3dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:text="@string/pm_paused_title"
+                android:textColor="@color/pm_text_white"
+                android:textSize="22sp" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- GAME OVER overlay -->
+    <FrameLayout
+        android:id="@+id/gameOverOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pm_overlay_dim"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/pm_panel_frame"
+                android:orientation="vertical"
+                android:padding="9dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pm_panel_cream"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="22dp"
+                    android:paddingEnd="18dp"
+                    android:paddingStart="18dp"
+                    android:paddingTop="46dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.08"
+                        android:text="@string/pm_gameover_score_label"
+                        android:textColor="@color/pm_brown_soft"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvFinalScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="0"
+                        android:textColor="@color/pm_coral"
+                        android:textSize="64sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tvNewBest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/pm_gameover_new_best"
+                        android:textColor="#D98A0B"
+                        android:textSize="19sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvBestScoreOver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="BEST SCORE: 0"
+                        android:textColor="@color/pm_brown_text"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:id="@+id/btnPlayAgain"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="18dp"
+                        android:background="@drawable/pm_btn_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_play_again"
+                        android:textColor="@color/pm_text_white"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:id="@+id/btnMenuOver"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/pm_btn_dark"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/pm_btn_menu"
+                        android:textColor="@color/pm_cream_text"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvGameOverTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/pm_pill_header"
+                android:gravity="center"
+                android:minWidth="190dp"
+                android:paddingBottom="3dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:text="@string/pm_gameover_title"
+                android:textColor="@color/pm_text_white"
+                android:textSize="22sp" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fxLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false">
+
+        <ImageView
+            android:id="@+id/imgHammer"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pm_hammer"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main menu -->
+    <string name="pm_btn_play">PLAY</string>
+    <string name="pm_btn_leaderboard">LEADERBOARD</string>
+    <string name="pm_btn_quit">BACK</string>
+    <string name="pm_btn_settings">SETTINGS</string>
+    <string name="pm_coming_soon">Coming soon!</string>
+    <string name="pm_best_score_format">BEST SCORE: %1$d</string>
+    <string name="pm_tagline_home">Tap fast, pop big!</string>
+    <string name="pm_tagline_howto">Small critters, big points!</string>
+
+    <!-- Dialogs -->
+    <string name="pm_settings_title">SETTINGS</string>
+    <string name="pm_settings_music">Music</string>
+    <string name="pm_settings_sound">Sound</string>
+    <string name="pm_toggle_on">ON</string>
+    <string name="pm_toggle_off">OFF</string>
+    <string name="pm_btn_done">DONE</string>
+    <string name="pm_leaderboard_title">LEADERBOARD</string>
+    <string name="pm_btn_close">CLOSE</string>
+    <string name="pm_quit_title">QUIT GAME?</string>
+    <string name="pm_quit_message">Are you sure you want to quit Pop Mania?</string>
+    <string name="pm_btn_yes">YES</string>
+    <string name="pm_btn_no">NO</string>
+
+    <!-- Game screen -->
+    <string name="pm_label_score">Score</string>
+    <string name="pm_label_time">Time</string>
+    <string name="pm_paused_title">PAUSED</string>
+    <string name="pm_btn_resume">RESUME</string>
+    <string name="pm_btn_restart">RESTART</string>
+    <string name="pm_btn_menu">MAIN MENU</string>
+    <string name="pm_gameover_title">TIME\'S UP!</string>
+    <string name="pm_gameover_bomb_title">BOOM!</string>
+    <string name="pm_gameover_score_label">YOUR SCORE</string>
+    <string name="pm_gameover_new_best">NEW BEST SCORE!</string>
+    <string name="pm_btn_play_again">PLAY AGAIN</string>
+    <string name="pm_points_format">+%1$d</string>
+    <string name="pm_points_golden_format">+%1$d GOLD!</string>
+    <string name="pm_cd_logo">Pop Mania logo</string>
+    <string name="pm_cd_pause">Pause</string>
+    <string name="pm_cd_hole">Hole</string>
+    <string name="pm_cd_previous_mode">Previous difficulty</string>
+    <string name="pm_cd_next_mode">Next difficulty</string>
+</resources>

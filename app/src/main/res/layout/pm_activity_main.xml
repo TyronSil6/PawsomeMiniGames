@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pm_bg_dark">
+
+    <!-- Sakura / shrine background -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pm_bg_arcade" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="14dp"
+        android:paddingTop="34dp">
+
+        <!-- Title plaque with gold studs -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="44dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:background="@drawable/pm_plaque_dark"
+                android:contentDescription="@string/pm_cd_logo"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="14dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.04"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="0"
+                    android:shadowDy="3"
+                    android:shadowRadius="2"
+                    android:text="POP"
+                    android:textColor="#FFC93D"
+                    android:textSize="52sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.04"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="0"
+                    android:shadowDy="3"
+                    android:shadowRadius="2"
+                    android:text="MANIA"
+                    android:textColor="#F0663F"
+                    android:textSize="58sp" />
+            </LinearLayout>
+
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                android:layout_gravity="top|start" android:importantForAccessibility="no" android:src="@drawable/pm_stud_gold" />
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                android:layout_gravity="top|end" android:importantForAccessibility="no" android:src="@drawable/pm_stud_gold" />
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                android:layout_gravity="bottom|start" android:importantForAccessibility="no" android:src="@drawable/pm_stud_gold" />
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                android:layout_gravity="bottom|end" android:importantForAccessibility="no" android:src="@drawable/pm_stud_gold" />
+        </FrameLayout>
+
+        <!-- Middle area: best score + mascots -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvBestScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pm_panel_chip"
+                android:paddingBottom="7dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="7dp"
+                android:text="BEST SCORE: 0"
+                android:textColor="#FFC93D"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/pm_char_capybara" />
+
+                <ImageView
+                    android:layout_width="116dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="-6dp"
+                    android:layout_marginStart="-6dp"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/pm_char_sloth" />
+
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/pm_char_fox" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- PLAY (all menu buttons across the games share the same size: 300dp x 68dp) -->
+        <TextView
+            android:id="@+id/btnPlay"
+            android:layout_width="300dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/pm_btn_red"
+            android:clickable="true"
+            android:drawablePadding="14dp"
+            android:drawableStart="@drawable/pm_ic_play"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/pm_btn_play"
+            android:textColor="@color/pm_text_white"
+            android:textSize="24sp" />
+
+        <!-- LEADERBOARD -->
+        <TextView
+            android:id="@+id/btnLeaderboard"
+            android:layout_width="300dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/pm_btn_gold"
+            android:clickable="true"
+            android:drawablePadding="12dp"
+            android:drawableStart="@drawable/pm_ic_trophy"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/pm_btn_leaderboard"
+            android:textColor="@color/pm_brown_text"
+            android:textSize="24sp" />
+
+        <!-- QUIT -->
+        <TextView
+            android:id="@+id/btnQuit"
+            android:layout_width="300dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/pm_btn_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="@string/pm_btn_quit"
+            android:textColor="@color/pm_cream_text"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:shadowColor="#CC000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="@string/pm_tagline_home"
+            android:textColor="#FFF6E2"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+</FrameLayout>

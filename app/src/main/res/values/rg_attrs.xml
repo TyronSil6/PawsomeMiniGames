@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="rg_OutlineTextView">
+        <attr name="rg_strokeColor" format="color"/>
+        <attr name="rg_strokeWidth" format="dimension"/>
+    </declare-styleable>
+</resources>

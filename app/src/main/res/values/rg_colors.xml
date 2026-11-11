@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rg_outline_brown">#4A2A10</color>
+    <color name="rg_text_brown">#5A3416</color>
+    <color name="rg_text_brown_soft">#7A5430</color>
+    <color name="rg_cream">#FFF6DC</color>
+    <color name="rg_white">#FFFFFF</color>
+    <color name="rg_leaf_green">#4CB848</color>
+    <color name="rg_sky">#8CD0F2</color>
+    <color name="rg_timer_ok">#5BE04A</color>
+    <color name="rg_timer_warn">#FFC83A</color>
+    <color name="rg_timer_danger">#FF4B4B</color>
+    <color name="rg_timer_track">#66000000</color>
+    <color name="rg_switch_on">#44C84A</color>
+    <color name="rg_switch_off">#A9A39A</color>
+    <color name="rg_gold">#FFC83A</color>
+</resources>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pm_bg_dark">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pm_bg_arcade" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="30dp">
+
+        <!-- GAME TITLE -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/pm_plaque_dark"
+                android:contentDescription="@string/pm_cd_logo"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:paddingBottom="4dp"
+                android:text="POP MANIA"
+                android:textColor="#FFC93D"
+                android:textSize="32sp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="top|end"
+                android:importantForAccessibility="no"
+                android:src="@drawable/pm_stud_gold" />
+        </FrameLayout>
+
+        <!-- HOW TO PLAY PANEL -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="-6dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/pm_panel_frame"
+                android:orientation="vertical"
+                android:padding="9dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pm_panel_cream"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="34dp">
+
+                        <!-- INTRODUCTION -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:background="@drawable/pm_panel_row_badge"
+                                android:importantForAccessibility="no"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pm_char_capybara" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:text="Tap the critters popping out of the holes and collect as many points as you can before time runs out!"
+                                android:textColor="@color/pm_brown_text"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/pm_divider" />
+
+                        <!-- SECTION TITLE -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="KNOW YOUR TARGETS"
+                            android:textColor="@color/pm_brown_soft"
+                            android:textSize="13sp"
+                            android:letterSpacing="0.06"
+                            tools:ignore="HardcodedText" />
+
+                        <!-- REGULAR CRITTERS -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:background="@drawable/pm_panel_row_badge"
+                                android:importantForAccessibility="no"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pm_char_fox" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:text="Regular critters    +10 points"
+                                android:textColor="@color/pm_brown_text"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/pm_divider" />
+
+                        <!-- GOLDEN RACCOON -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:background="@drawable/pm_panel_row_badge"
+                                android:importantForAccessibility="no"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pm_char_golden_raccoon" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:text="Golden critter    +50 bonus points"
+                                android:textColor="@color/pm_brown_text"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/pm_divider" />
+
+                        <!-- ADDITIONAL TIMER -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:background="@drawable/pm_panel_row_badge"
+                                android:importantForAccessibility="no"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pm_char_timer" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:text="Timer    +5 additional seconds"
+                                android:textColor="@color/pm_brown_text"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/pm_divider" />
+
+                        <!-- SNAKE -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:background="@drawable/pm_panel_row_badge"
+                                android:importantForAccessibility="no"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pm_char_snake" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:text="Snake    lose 15 points"
+                                android:textColor="@color/pm_brown_text"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/pm_divider" />
+
+                        <!-- BOMB -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:background="@drawable/pm_panel_row_badge"
+                                android:importantForAccessibility="no"
+                                android:padding="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/pm_char_star" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:text="Bomb   —  do not tap! It ends the round."
+                                android:textColor="@color/pm_brown_text"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/pm_divider" />
+
+                        <!-- QUICK TIPS -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="QUICK TIPS"
+                            android:textColor="@color/pm_brown_soft"
+                            android:textSize="13sp"
+                            android:letterSpacing="0.06"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:lineSpacingExtra="3dp"
+                            android:text="•  Keep your eyes on all the holes.\n•  Tap quickly, but check the target first.\n•  Golden critters are rare, so grab them fast!\n•  Choose a mode that matches your skill."
+                            android:textColor="@color/pm_brown_text"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <!-- HOW TO PLAY HEADER -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/pm_pill_header"
+                android:gravity="center"
+                android:minWidth="230dp"
+                android:paddingBottom="3dp"
+                android:paddingEnd="26dp"
+                android:paddingStart="26dp"
+                android:text="HOW TO PLAY"
+                android:textColor="@color/pm_text_white"
+                android:textSize="22sp"
+                tools:ignore="HardcodedText" />
+
+        </FrameLayout>
+
+        <!-- DIFFICULTY SELECTOR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnPreviousMode"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@drawable/pm_btn_round_gold"
+                android:clickable="true"
+                android:contentDescription="@string/pm_cd_previous_mode"
+                android:focusable="true"
+                android:paddingBottom="11dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:src="@drawable/pm_ic_arrow_left" />
+
+            <TextView
+                android:id="@+id/tvDifficulty"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/pm_btn_gold"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="★★ MEDIUM"
+                android:textColor="@color/pm_brown_text"
+                android:textSize="26sp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/btnNextMode"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@drawable/pm_btn_round_gold"
+                android:clickable="true"
+                android:contentDescription="@string/pm_cd_next_mode"
+                android:focusable="true"
+                android:paddingBottom="11dp"
+                android:paddingEnd="14dp"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:src="@drawable/pm_ic_arrow_right" />
+        </LinearLayout>
+
+        <!-- DIFFICULTY DESCRIPTION -->
+        <TextView
+            android:id="@+id/tvDifficultyDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/pm_panel_desc"
+            android:gravity="center"
+            android:minHeight="44dp"
+            android:paddingBottom="8dp"
+            android:paddingEnd="12dp"
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:text="30 seconds • Balanced speed • A fun challenge"
+            android:textColor="@color/pm_text_white"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <!-- PLAY BUTTON -->
+        <TextView
+            android:id="@+id/btnStartGame"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/pm_btn_red"
+            android:clickable="true"
+            android:drawablePadding="14dp"
+            android:drawableStart="@drawable/pm_ic_play"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingEnd="64dp"
+            android:paddingStart="64dp"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/pm_btn_play"
+            android:textColor="@color/pm_text_white"
+            android:textSize="30sp" />
+
+        <!-- BACK BUTTON -->
+        <TextView
+            android:id="@+id/btnHowBack"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/pm_btn_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="BACK"
+            android:textColor="@color/pm_cream_text"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:shadowColor="#CC000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="@string/pm_tagline_howto"
+            android:textColor="#FFF6E2"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+</FrameLayout>

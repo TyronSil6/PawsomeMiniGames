@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Sakura Brawl vibrates on hits -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PawsomeMiniGames"
+        tools:targetApi="31">
+
+        <!-- Loading screen: the first thing the player sees -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The hub: pick a game, open Settings -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Critter Toss: title screen, then the game -->
+        <activity
+            android:name=".crittertoss.MenuActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".crittertoss.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Pop Mania: home screen, how to play (+ difficulty), then the game -->
+        <activity
+            android:name=".popmania.PopManiaActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawsomePopMania" />
+        <activity
+            android:name=".popmania.InstructionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawsomePopMania" />
+        <activity
+            android:name=".popmania.GameActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawsomePopMania" />
+
+        <!-- Sakura Brawl (menu + game in one activity; it rotates with the phone) -->
+        <activity
+            android:name=".sakurabrawl.SakuraBrawlActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:exported="false" />
+        <!-- Reaction Game: menu (with leaderboard pop-up), how to play, then the game -->
+        <activity
+            android:name=".reactiongame.MainMenuActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawsomeReactionGame" />
+        <activity
+            android:name=".reactiongame.HowToPlayActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawsomeReactionGame" />
+        <activity
+            android:name=".reactiongame.GameActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PawsomeReactionGame" />
+    </application>
+
+</manifest>

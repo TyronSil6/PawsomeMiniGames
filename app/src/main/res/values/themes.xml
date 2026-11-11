@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PawsomeMiniGames" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- no white flash while a screen is opening, and a soft fade between every screen -->
+        <item name="android:windowBackground">#1C161C</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Pawsome</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.PawsomeMiniGames" parent="Base.Theme.PawsomeMiniGames" />
+
+    <style name="Animation.Pawsome" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/pawsome_fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/pawsome_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/pawsome_fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/pawsome_fade_out</item>
+    </style>
+</resources>
